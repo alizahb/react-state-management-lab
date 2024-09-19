@@ -75,13 +75,13 @@ const ZombieFighters = ({ team, setTeam, money, setMoney }) => {
     ]); 
 
 
-  const handleAddFighter= (fighter) => {
+  const handleAddFighter = (fighter) => {
     if (!team.some((member) => member.name ===fighter.name) &&
     money >= fighter.price) {
       setTeam([...team, fighter]);
       setMoney(money-fighter.price); 
     } else {
-      console.log('Not enough money'); 
+      console.log('Not Enough Money'); 
 
     }  
 

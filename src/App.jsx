@@ -15,7 +15,7 @@ return (
     <h1>Welcome to Reactville!</h1>
     <Team 
       team = {team}
-      setTeam= {setTeam}
+      //setTeam= {setTeam}
       totalStrength={totalStrength} 
       setTotalStrength={setTotalStrength}
       totalAgility= {totalAgility}
@@ -29,7 +29,7 @@ return (
     setMoney={setMoney}
     /> 
   </div>
-); 
+  ); 
 }; 
 
 export default App
