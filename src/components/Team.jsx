@@ -25,7 +25,7 @@ const Team = ({ team, totalStrength, setTotalStrength, totalAgility, setTotalAgi
             </div>
         ))}
         </ul> 
-    )};
+    )}
   <h3>Total Strength: {totalStrength}</h3>
   <h3>Total Agility: {totalAgility} </h3>
   </div> 

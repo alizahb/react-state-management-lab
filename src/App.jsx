@@ -9,13 +9,12 @@ const App = () => {
   const [money, setMoney] = useState(100); 
   const [totalStrength, setTotalStrength] = useState(0); 
   const [totalAgility, setTotalAgility] = useState(0); 
-
+  const [errorMessage, setErrorMessage] = useState(''); 
 return ( 
   <div>
     <h1>Welcome to Reactville!</h1>
     <Team 
       team = {team}
-      //setTeam= {setTeam}
       totalStrength={totalStrength} 
       setTotalStrength={setTotalStrength}
       totalAgility= {totalAgility}
@@ -27,10 +26,13 @@ return (
     setTeam={setTeam}
     money={money}
     setMoney={setMoney}
+    errorMessage= {errorMessage}
+    setErrorMessage={setErrorMessage}
     /> 
+{errorMessage && <p style= {{ color: 'red'}}> { errorMessage }</p>}
   </div>
   ); 
-}; 
+}
 
 export default App
 

@@ -76,28 +76,32 @@ const ZombieFighters = ({ team, setTeam, money, setMoney }) => {
 
 
   const handleAddFighter = (fighter) => {
-    if (!team.some((member) => member.name ===fighter.name) &&
-    money >= fighter.price) {
-      setTeam([...team, fighter]);
-      setMoney(money-fighter.price); 
-    } else {
-      console.log('Not Enough Money'); 
+    if (!team.some((member) => member.name ===fighter.name)) {
+      if (money >= fighter.price) {
+        setTeam([...team, fighter]);
+        setMoney(money-fighter.price); 
+        setErrorMessage(''); 
+      } else {
+        setErrorMessage('Not enough money to add this fighter'); 
 
-    }  
+      }
+    }
+  };   
 
-  }; 
+  
 
   const handleRemoveFighter= (fighter) => {
     setTeam(team.filter((member) => member.name !== fighter.name)); 
     setMoney(money + fighter.price); 
-  }
+    setErrorMessage('');
+    };
 
   return (
     <div>
       <h2> Zombie Fighters</h2>
     {fighters.map((fighter) => (
       <div key={fighter.name}> 
-      <h2>(fighter.name)</h2>
+      <h2>{fighter.name}</h2>
         <img src = {fighter.img} alt={fighter.name} /> 
         <li>Price: ${fighter.price}</li>
         <li>Strength: {fighter.strength}</li>
